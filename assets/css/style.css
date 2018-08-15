@@ -1,0 +1,12 @@
+img {
+	max-width: 200px;
+    max-height: 200px;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+#newB {
+    margin: 10px;
+}
