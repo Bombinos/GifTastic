@@ -1,3 +1,9 @@
+body {
+    background-image: url("../images/mCbckgrnd2.jpg");
+    background-repeat: no-repeat;
+    column-fill: auto;
+}
+
 img {
 	max-width: 200px;
     max-height: 200px;
@@ -5,8 +11,24 @@ img {
 
 .jumbotron {
     text-align: center;
+    /* opacity: .9; */
+    background-color: rgb(57, 99, 57);
+    color: white;
 }
 
 #newB {
     margin: 10px;
+    background-color:  rgb(57, 99, 57);
+    color: white;
+}
+
+#form {
+    color: white;
+    font-weight: bold;
+    font-size: large;
+}
+
+#newGifButton {
+    background-color:  rgb(57, 99, 57);
+    color: white;
 }
