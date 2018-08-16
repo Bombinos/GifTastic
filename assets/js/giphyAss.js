@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
 
-    var topics = ["Enderman", "Cave Spider", "Spider", "Zombie Pigman", "Blaze", "Creeper","Guardian", "Shulker", "Ghast", "Skeleton", "Zombie", "Witch", "Wolf", "Horse", "Chicken", "Cow", "Villager"];
+    var topics = ["Enderman", "Cave Spider", "Spider", "Zombie Pigman", "Blaze", "Creeper", "Guardian", "Shulker", "Ghast", "Skeleton", "Zombie", "Witch", "Wolf", "Horse", "Chicken", "Cow", "Villager"];
 
     function displayGif(){
 
@@ -17,25 +17,27 @@ $(document).ready(function(){
         }).then(function(response) {
 
             for(var g = 0; g < limit; g++) {    
+                if (response.data[g].rating !== "r" && response.data[g].rating !== "pg-13") {
 
-                var newDiv = $("<div>");
-                newDiv.addClass("holder");
-            
-                var image = $("<img>");
-                image.attr("src", response.data[g].images.original_still.url);
-                image.attr("gifStill", response.data[g].images.original_still.url);
-                image.attr("gifAnimate", response.data[g].images.original.url);
-                image.attr("gifState", "still");
-                image.attr("class", "gif");
-                newDiv.append(image);
+                    var newDiv = $("<div>");
+                    newDiv.addClass("holder");
+                
+                    var image = $("<img>");
+                    image.attr("src", response.data[g].images.original_still.url);
+                    image.attr("gifStill", response.data[g].images.original_still.url);
+                    image.attr("gifAnimate", response.data[g].images.original.url);
+                    image.attr("gifState", "still");
+                    image.attr("class", "gif");
+                    newDiv.append(image);
 
-                var rating = response.data[g].rating;
-                console.log(response);
-                var pRating = $("<p>").text("Rating: " + rating);
-                newDiv.append(pRating)
+                    var rating = response.data[g].rating;
+                    console.log(response);
+                    var pRating = $("<p>").text("Rating: " + rating);
+                    newDiv.append(pRating)
 
-                $("#displayGifs").append(newDiv);
+                    $("#displayGifs").append(newDiv);
             }
+        }
         });
     }
 
