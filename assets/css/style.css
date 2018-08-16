@@ -32,3 +32,15 @@ img {
     background-color:  rgb(57, 99, 57);
     color: white;
 }
+
+.holder {
+    width: 250px;
+    margin-right: 0px;
+}
+
+p {
+    width: 250px;
+    font-weight: bold;
+    font-size: large;
+    color: grey;
+}
